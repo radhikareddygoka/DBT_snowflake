@@ -1,6 +1,8 @@
 {{ config(materialized='table') }}
+with customer_data
 (
-    select * from DBT_DATABASE.DBT_SCM.CUSTOMER
+    select * from {{source('raw','customers')}}
 )
+select * from customer_data
 
 
