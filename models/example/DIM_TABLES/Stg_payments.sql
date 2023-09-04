@@ -1,4 +1,6 @@
 {{ config(materialized='table') }}
+with payment_data as 
 (
-select * from DBT_DATABASE.DBT_SCM.PAYMENTS
+select * from {{source('raw','payments')}}
 )
+select * from payment_data

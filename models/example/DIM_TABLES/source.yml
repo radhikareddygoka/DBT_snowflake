@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DBT_DATABASE
+    schema: DBT_SCM
+    tables:
+      - name: customers
+      - name: orders
+      - name: payments
